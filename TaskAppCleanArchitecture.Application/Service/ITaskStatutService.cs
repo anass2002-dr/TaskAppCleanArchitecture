@@ -11,7 +11,10 @@ namespace TaskAppCleanArchitecture.Application.Service
     {
 
         List<object> GetTaskStatut();
+        List<object> GetTaskStatutDo();
+
         TacheStatut CreateTaskStatut(TacheStatut TaskStatut);
+
         TacheStatut UpdateTaskStatut(TacheStatut TaskStatut);
         TacheStatut GetTaskStatutById(int id);
         bool DeleteTaskStatut(int id);

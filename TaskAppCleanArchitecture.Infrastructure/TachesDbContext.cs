@@ -30,6 +30,7 @@ namespace TaskAppCleanArchitecture.Infrastructure
                 .WithMany(x => x.TacheDo)
                 .HasForeignKey(x => x.idTacheStatut)
                 .OnDelete(DeleteBehavior.NoAction);
+                
             });
 
 

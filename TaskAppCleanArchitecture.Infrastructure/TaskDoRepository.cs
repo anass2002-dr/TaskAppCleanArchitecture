@@ -71,7 +71,18 @@ namespace TaskAppCleanArchitecture.Infrastructure
 
         public List<object> GetTaskFinished()
         {
-            var result=_tachesDbContext.Taches.Include(e=>e)
+            var result = from td in _tachesDbContext.Taches
+                         join ts in _tachesDbContext.TacheStatuts on td.idTacheStatut equals ts.Id into jointureGauche
+                         from ts in jointureGauche.DefaultIfEmpty()
+                         where ts.statut == "finished"
+                         select new
+                         {
+                             td.Id,
+                             td.Name,
+                             td.Description,
+                             Statut = ts != null ? ts.statut : null // Assurez-vous de traiter le cas où ts est null
+                         };
+            return result.ToList<object>();
         }
     }
 }

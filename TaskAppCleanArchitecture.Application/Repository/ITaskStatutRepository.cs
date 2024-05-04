@@ -10,6 +10,7 @@ namespace TaskAppCleanArchitecture.Application.Repository
     public interface ITaskStatutRepository
     {
         List<TacheStatut> GetTaskStatut();
+        List<object> GetTaskStatutDo();
         TacheStatut CreateTaskStatut(TacheStatut TaskStatut);
         TacheStatut UpdateTaskStatut(TacheStatut TaskStatut);
         TacheStatut GetTaskStatutById(int id);

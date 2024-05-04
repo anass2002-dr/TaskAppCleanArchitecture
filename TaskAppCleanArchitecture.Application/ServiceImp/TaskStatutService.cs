@@ -35,6 +35,11 @@ namespace TaskAppCleanArchitecture.Application.ServiceImp
             throw new NotImplementedException();
         }
 
+        public List<object> GetTaskStatutDo()
+        {
+            return _taskStatutRepository.GetTaskStatutDo();
+        }
+
         public TacheStatut UpdateTaskStatut(TacheStatut TaskStatut)
         {
             throw new NotImplementedException();

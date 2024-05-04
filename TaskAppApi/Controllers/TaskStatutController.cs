@@ -21,7 +21,12 @@ namespace TaskAppApi.Controllers
             var taskStatut = new TacheStatut { Description = CreateTacheStatutsDtos.Description, statut = CreateTacheStatutsDtos.statut };
             return Ok(_taskStatutService.CreateTaskStatut(taskStatut));
         }
-
+        [HttpGet("GetTaskStatutToDo")]
+        public ActionResult GetTaskStatutToDo()
+        {
+            
+            return Ok(_taskStatutService.GetTaskStatutDo());
+        }
 
     }
 }

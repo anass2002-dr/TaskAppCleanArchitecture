@@ -16,6 +16,6 @@ namespace TaskAppCleanArchitecture.Domaine.Models
         public string? Description { get; set; } = string.Empty;
         [JsonIgnore]
         public TacheStatut? TacheStatut { get; set; }
-        public int idTacheStatut { get; set; }
+        public int? idTacheStatut { get; set; }
     }
 }

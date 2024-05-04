@@ -36,6 +36,11 @@ namespace TaskAppCleanArchitecture.Application.ServiceImp
             return _IRepository.GetTaskDosById(id);
         }
 
+        public List<object> GetTaskFinished()
+        {
+            return _IRepository.GetTaskFinished();
+        }
+
         public TacheDo UpdateTaskDo(TacheDo taskDo)
         {
             return _IRepository.UpdateTaskDo(taskDo);

@@ -38,6 +38,22 @@ namespace TaskAppCleanArchitecture.Infrastructure
             throw new NotImplementedException();
         }
 
+        public List<object> GetTaskStatutDo()
+        {
+            var result = from ts in _context.TacheStatuts
+                         join td in _context.Taches on ts.Id equals td.idTacheStatut into jointureGauche
+                         from td in jointureGauche.DefaultIfEmpty()
+                         select new
+                         {
+                             IdStatut = ts.Id,
+                             Statut = ts.statut,
+                             NomTache = td != null ? td.Name : null, // Assurez-vous de traiter le cas où td est null
+                             IdTacheStatut = td != null ? td.idTacheStatut : null // Assurez-vous de traiter le cas où td est null
+                         };
+            return result.ToList<object>();
+
+        }
+
         public TacheStatut UpdateTaskStatut(TacheStatut TaskStatut)
         {
             throw new NotImplementedException();
